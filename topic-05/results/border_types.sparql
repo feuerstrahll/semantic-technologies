@@ -1,0 +1,11 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+SELECT ?country ?neighbor ?borderItem ?kind WHERE {
+  ?country wdt:P31 wd:Q3624078 ; wdt:P47 ?neighbor ; p:P47 ?statement .
+  ?neighbor wdt:P31 wd:Q3624078 .
+  ?statement ps:P47 ?neighbor ; pq:P805 ?borderItem .
+  OPTIONAL { ?borderItem wdt:P31 ?kind }
+}

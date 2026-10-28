@@ -1,0 +1,1608 @@
+[
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4918"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q14352"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q41573"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q740393"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q31"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2052849"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1693"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q236"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q224"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2109394"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q207468"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q38"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991288"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4918"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q38"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991288"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q38882"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q39"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991697"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q584"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q235"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996372"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4918"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q37040"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q184189"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q189262"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q737190"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q681389"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q298"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993859"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q98"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q298"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993859"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q118574"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q298"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993859"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3705943"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q750"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088858"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q118574"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q750"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088858"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q177567"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1000"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q983"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2749188"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q258"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1030"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2747810"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q258"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1029"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088674"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1239"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q298"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993859"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q98"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q298"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993859"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q118574"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q298"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993859"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3705943"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q739"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q558660"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q177567"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q983"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1000"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2749188"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q235"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996372"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4918"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q183"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991225"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q584"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q31"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2052849"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1693"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q38"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991288"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4918"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q38"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991288"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q38882"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q39"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991697"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q584"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q730"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088913"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q730"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088913"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q643547"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q155"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993494"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q177567"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29999"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996259"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1247"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29999"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996259"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q25596"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29999"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996259"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1247"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29999"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996259"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q25596"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1029"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q258"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088674"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1239"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1030"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q258"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2747810"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q730"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088913"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q730"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088913"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q643547"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q717"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q734"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q816253"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q739"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q558660"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q177567"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q750"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088858"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q118574"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q750"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088858"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q177567"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29999"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996259"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1247"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29999"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1996259"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q25596"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q717"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q3088907"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1247"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q97"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4918"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q14352"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q41573"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q29"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q2637319"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q740393"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q801"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q822"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q882518"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q83210"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q801"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q822"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q882518"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q189942"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q801"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q822"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q882518"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1480109"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q822"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q801"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q882518"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q83210"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q822"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q801"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q882518"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q189942"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q822"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q801"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q882518"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1480109"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q37040"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q184189"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q189262"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q737190"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q756617"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q16025014"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q681389"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P206"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q219060"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q79"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q765017"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q4918"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q219060"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q79"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q765017"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q36755"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q419"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q155"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1993494"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q177567"
+    }
+  },
+  {
+    "featureProperty": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/prop/direct/P706"
+    },
+    "country": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q183"
+    },
+    "neighbor": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q142"
+    },
+    "borderItem": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q1991225"
+    },
+    "feature": {
+      "type": "uri",
+      "value": "http://www.wikidata.org/entity/Q584"
+    }
+  }
+]

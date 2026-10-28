@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Связи страны в Wikidata</title>
+<style>
+  :root { font-family: system-ui, sans-serif; color: #213047; background: #f3f6fa; }
+  body { max-width: 1100px; margin: 32px auto; padding: 0 18px; }
+  h1 { margin-bottom: 5px; } p { color: #59687b; }
+  .search { display: flex; gap: 8px; margin: 20px 0 8px; }
+  input { flex: 1; padding: 12px; border: 1px solid #bcc9d8; border-radius: 8px; font: inherit; }
+  button { padding: 11px 16px; border: 0; border-radius: 8px; background: #27649a; color: white; cursor: pointer; font: inherit; }
+  button:hover { background: #164c7d; } button:disabled { opacity: .6; cursor: default; }
+  #matches { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 20px; }
+  #matches button { background: white; color: #254d72; border: 1px solid #b9cbdc; }
+  #status { min-height: 25px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+  section { background: white; border: 1px solid #dbe3ed; border-radius: 12px; padding: 16px; }
+  section h2 { font-size: 18px; margin: 0 0 12px; }
+  .item { padding: 9px 0; border-top: 1px solid #edf1f5; }
+  .item:first-of-type { border-top: 0; }
+  .detail { display: block; color: #637186; font-size: 13px; margin-top: 3px; }
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 12px; margin: 2px 3px 2px 0; background: #e6eef8; font-size: 12px; }
+  a { color: #1265a3; text-decoration: none; } a:hover { text-decoration: underline; }
+  .empty { color: #7a8797; }
+</style>
+<h1>Связи страны в Wikidata</h1>
+<p>Введите точное название страны или QID. Страница запрашивает Wikidata при выборе страны; данные не сохраняются и весь граф заранее не загружается.</p>
+<div class="search">
+  <input id="country" placeholder="Например: Германия или Q183" aria-label="Страна">
+  <button id="search">Найти</button>
+</div>
+<div id="matches"></div>
+<p id="status" role="status"></p>
+<main id="results"></main>
+<script>
+const endpoint = 'https://query.wikidata.org/sparql';
+const countryInput = document.querySelector('#country');
+const searchButton = document.querySelector('#search');
+const matches = document.querySelector('#matches');
+const status = document.querySelector('#status');
+const results = document.querySelector('#results');
+let requestNumber = 0;
+const qid = uri => uri?.split('/').pop() || '';
+const value = (row, key) => row[key]?.value || '';
+const name = (row, key) => value(row, key + 'Label') || qid(value(row, key));
+const link = (id, label) => {
+  const a = document.createElement('a');
+  a.href = 'https://www.wikidata.org/wiki/' + id;
+  a.target = '_blank'; a.rel = 'noopener noreferrer';
+  a.textContent = label ? `${label} (${id})` : id;
+  return a;
+};
+function line(parent, text, className = 'detail') {
+  const span = document.createElement('span');
+  span.className = className; span.textContent = text; parent.append(span);
+}
+function section(title, parent) {
+  const box = document.createElement('section');
+  const h = document.createElement('h2'); h.textContent = title;
+  box.append(h); parent.append(box); return box;
+}
+function item(box, id, label) {
+  const div = document.createElement('div'); div.className = 'item';
+  div.append(link(id, label)); box.append(div); return div;
+}
+function empty(box) { line(box, 'В Wikidata нет записей для этого раздела.', 'empty'); }
+async function sparql(query) {
+  const url = endpoint + '?' + new URLSearchParams({query, format: 'json'});
+  const response = await fetch(url, {headers: {'Accept': 'application/sparql-results+json'}});
+  if (!response.ok) throw new Error(`Wikidata Query Service: HTTP ${response.status}`);
+  return (await response.json()).results.bindings;
+}
+function borderQuery(id) { return `
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+PREFIX pq: <http://www.wikidata.org/prop/qualifier/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+SELECT ?neighbor ?neighborLabel ?statement ?borderItem ?borderItemLabel ?criterion ?nature ?kind ?feature ?featureLabel WHERE {
+  { wd:${id} wdt:P47 ?neighbor } UNION { ?neighbor wdt:P47 wd:${id} }
+  ?neighbor wdt:P31 wd:Q3624078 .
+  OPTIONAL {
+    { wd:${id} p:P47 ?statement . ?statement ps:P47 ?neighbor }
+    UNION { ?neighbor p:P47 ?statement . ?statement ps:P47 wd:${id} }
+    OPTIONAL { ?statement pq:P805 ?borderItem .
+      OPTIONAL { ?borderItem wdt:P31 ?kind }
+      OPTIONAL { ?borderItem (wdt:P706|wdt:P206) ?feature }
+    }
+    OPTIONAL { ?statement pq:P1013 ?criterion }
+    OPTIONAL { ?statement pq:P5102 ?nature }
+  }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+}`; }
+function attributesQuery(id) { return `
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+SELECT ?property ?target ?targetLabel WHERE {
+  VALUES ?property { wdt:P36 wdt:P37 wdt:P38 wdt:P30 }
+  wd:${id} ?property ?target .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+}`; }
+function sharedQuery(id) { return `
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+SELECT ?property ?common ?commonLabel ?other ?otherLabel WHERE {
+  VALUES ?property { wdt:P37 wdt:P38 }
+  wd:${id} ?property ?common .
+  ?other ?property ?common ; wdt:P31 wd:Q3624078 .
+  FILTER(?other != wd:${id})
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+}`; }
+function searchQuery(text) {
+  const capitalized = text[0].toLocaleUpperCase('ru') + text.slice(1);
+  const names = [...new Set([text, capitalized])]
+    .flatMap(x => [`${JSON.stringify(x)}@ru`, `${JSON.stringify(x)}@en`]).join(' ');
+  return `
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+SELECT DISTINCT ?item ?itemLabel WHERE {
+  VALUES ?searched { ${names} }
+  { ?item rdfs:label ?searched } UNION { ?item skos:altLabel ?searched }
+  ?item wdt:P31 wd:Q3624078 .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ru,en". }
+} LIMIT 12`;
+}
+const kindMap = {Q15104814: 'суша', Q3089219: 'вода', Q27345018: 'точка', Q1540416: 'точка'};
+function render(label, id, borders, attributes, shared) {
+  results.replaceChildren();
+  const title = document.createElement('h2');
+  title.append(link(id, label)); results.append(title);
+  const grid = document.createElement('div'); grid.className = 'grid'; results.append(grid);
+  const borderBox = section('Границы P47', grid);
+  const byNeighbor = new Map();
+  for (const row of borders) {
+    const key = qid(value(row, 'neighbor'));
+    if (!byNeighbor.has(key)) byNeighbor.set(key, {label: name(row, 'neighbor'), types: new Set(), objects: new Map(), features: new Map(), statements: new Set()});
+    const b = byNeighbor.get(key);
+    for (const field of ['criterion', 'nature', 'kind']) {
+      const type = kindMap[qid(value(row, field))]; if (type) b.types.add(type);
+    }
+    if (value(row, 'borderItem')) b.objects.set(qid(value(row, 'borderItem')), name(row, 'borderItem'));
+    if (value(row, 'feature')) b.features.set(qid(value(row, 'feature')), name(row, 'feature'));
+    if (value(row, 'statement')) b.statements.add(value(row, 'statement'));
+  }
+  for (const [other, b] of [...byNeighbor].sort((a, b) => a[1].label.localeCompare(b[1].label, 'ru'))) {
+    const div = item(borderBox, other, b.label);
+    line(div, 'Тип: ' + ([...b.types].join(' и ') || 'не указан'));
+    for (const [object, objectName] of b.objects) { line(div, 'Объект границы: '); div.lastChild.append(link(object, objectName)); }
+    for (const [feature, featureName] of b.features) { line(div, 'Связанный географический объект: '); div.lastChild.append(link(feature, featureName)); }
+    const sourceIds = new Set([...b.statements].map(uri => qid(uri).split('-')[0].toUpperCase()));
+    if (sourceIds.size) {
+      const detail = document.createElement('span'); detail.className = 'detail';
+      detail.append('Источники P47: ');
+      for (const sourceId of sourceIds) {
+        const source = link(sourceId);
+        source.href += '#P47';
+        detail.append(source, ' ');
+      }
+      div.append(detail);
+    }
+  }
+  if (!byNeighbor.size) empty(borderBox);
+  const attributeNames = {P36: 'Столица', P37: 'Официальный язык', P38: 'Валюта', P30: 'Континент'};
+  for (const [property, heading] of Object.entries(attributeNames)) {
+    const box = section(`${heading} (${property})`, grid);
+    const rows = attributes.filter(row => qid(value(row, 'property')) === property);
+    for (const row of rows) item(box, qid(value(row, 'target')), name(row, 'target'));
+    if (!rows.length) empty(box);
+  }
+  for (const [property, heading] of [['P37', 'Общий официальный язык'], ['P38', 'Общая валюта']]) {
+    const box = section(heading, grid); const byOther = new Map();
+    for (const row of shared.filter(row => qid(value(row, 'property')) === property)) {
+      const other = qid(value(row, 'other'));
+      if (!byOther.has(other)) byOther.set(other, {label: name(row, 'other'), common: new Map()});
+      byOther.get(other).common.set(qid(value(row, 'common')), name(row, 'common'));
+    }
+    for (const [other, entry] of [...byOther].sort((a, b) => a[1].label.localeCompare(b[1].label, 'ru'))) {
+      const div = item(box, other, entry.label);
+      for (const [common, commonName] of entry.common) {
+        const detail = document.createElement('span'); detail.className = 'detail';
+        detail.append('Общий объект: ', link(common, commonName)); div.append(detail);
+      }
+    }
+    if (!byOther.size) empty(box);
+  }
+  status.textContent = `Найдено соседей: ${byNeighbor.size}. Связи получены напрямую из Wikidata.`;
+}
+async function selectCountry(id, label) {
+  const current = ++requestNumber;
+  matches.replaceChildren(); results.replaceChildren();
+  countryInput.value = `${label} (${id})`; status.textContent = 'Загружаю связи из Wikidata…';
+  try {
+    const [borders, attributes, shared] = await Promise.all([
+      sparql(borderQuery(id)), sparql(attributesQuery(id)), sparql(sharedQuery(id))
+    ]);
+    if (current === requestNumber) render(label, id, borders, attributes, shared);
+  } catch (error) { if (current === requestNumber) status.textContent = `Ошибка запроса: ${error.message}`; }
+}
+async function search() {
+  const text = countryInput.value.trim();
+  matches.replaceChildren(); results.replaceChildren();
+  if (!text) { status.textContent = 'Введите страну или QID.'; return; }
+  const direct = text.match(/\bQ\d+\b/i);
+  if (direct) { selectCountry(direct[0].toUpperCase(), direct[0].toUpperCase()); return; }
+  const current = ++requestNumber;
+  status.textContent = 'Ищу страну…';
+  try {
+    const items = await sparql(searchQuery(text));
+    if (current !== requestNumber) return;
+    status.textContent = items.length ? 'Выберите нужную страну из результатов поиска.' : 'Ничего не найдено. Можно ввести QID.';
+    for (const row of items) {
+      const button = document.createElement('button');
+      const id = qid(value(row, 'item'));
+      const label = name(row, 'item');
+      button.textContent = `${label} (${id})`;
+      button.onclick = () => selectCountry(id, label);
+      matches.append(button);
+    }
+  } catch (error) { if (current === requestNumber) status.textContent = `Ошибка поиска: ${error.message}`; }
+}
+searchButton.onclick = search;
+countryInput.addEventListener('keydown', event => { if (event.key === 'Enter') search(); });
+</script>
+</html>

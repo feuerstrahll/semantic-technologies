@@ -1,0 +1,36 @@
+@prefix mus: <https://example.org/museum/ontology/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+mus:MuseumObjectShape a sh:NodeShape ;
+    sh:targetClass mus:MuseumObject ;
+    sh:property [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:uniqueLang true ;
+        sh:message "У музейного объекта должно быть ровно одно название на каждом языке."@ru
+    ] ;
+    sh:property [
+        sh:path mus:inventoryNumber ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[А-ЯЁA-Z]+-[0-9]{4}$" ;
+        sh:message "Инвентарный номер обязателен и должен иметь формат БУКВЫ-0000."@ru
+    ] ;
+    sh:property [
+        sh:path mus:createdBy ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class mus:Creator ;
+        sh:message "Автор обязателен, должен быть IRI и экземпляром mus:Creator."@ru
+    ] ;
+    sh:property [
+        sh:path mus:madeOf ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class mus:MaterialConcept ;
+        sh:message "Материал обязателен, должен быть IRI и экземпляром mus:MaterialConcept."@ru
+    ] .

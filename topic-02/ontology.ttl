@@ -1,0 +1,141 @@
+@prefix mus: <https://example.org/museum/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+mus: a owl:Ontology ;
+    dcterms:title "Онтология музейной коллекции (вариант 57)"@ru ;
+    dcterms:description "Формальная схема объектов, коллекций, авторов, материалов и выставок."@ru ;
+    dcterms:creator "Студент, вариант 57"@ru ;
+    owl:versionInfo "1.0" .
+
+# Классы
+mus:MuseumEntity a rdfs:Class ;
+    rdfs:label "Музейная сущность"@ru ;
+    rdfs:comment "Общий класс сущностей музейной информационной системы."@ru .
+
+mus:Agent a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumEntity ;
+    rdfs:label "Агент"@ru .
+
+mus:MuseumObject a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumEntity, schema:CreativeWork ;
+    rdfs:label "Музейный объект"@ru ;
+    rdfs:comment "Объект, принятый на музейный учёт и описанный в каталоге."@ru .
+
+mus:Artwork a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumObject ;
+    rdfs:label "Произведение искусства"@ru .
+
+mus:Document a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumObject ;
+    rdfs:label "Документ"@ru .
+
+mus:Creator a rdfs:Class ;
+    rdfs:subClassOf mus:Agent, schema:Person ;
+    rdfs:label "Автор"@ru .
+
+mus:MuseumOrganization a rdfs:Class ;
+    rdfs:subClassOf mus:Agent, schema:Organization ;
+    rdfs:label "Музейная организация"@ru .
+
+mus:Collection a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumEntity ;
+    rdfs:label "Коллекция"@ru .
+
+mus:Exhibition a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumEntity, schema:Event ;
+    rdfs:label "Выставка"@ru .
+
+mus:MaterialConcept a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumEntity, skos:Concept ;
+    rdfs:label "Понятие материала"@ru .
+
+mus:MuseumLocation a rdfs:Class ;
+    rdfs:subClassOf mus:MuseumEntity, schema:Place ;
+    rdfs:label "Музейное место"@ru .
+
+# Объектные свойства
+mus:hasMember a owl:ObjectProperty ;
+    rdfs:domain mus:Collection ;
+    rdfs:range mus:MuseumObject ;
+    rdfs:label "содержит объект"@ru ;
+    owl:inverseOf mus:memberOfCollection .
+
+mus:memberOfCollection a owl:ObjectProperty ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range mus:Collection ;
+    rdfs:label "входит в коллекцию"@ru .
+
+mus:createdBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf dcterms:creator ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range mus:Creator ;
+    rdfs:label "создан автором"@ru .
+
+mus:madeOf a owl:ObjectProperty ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range mus:MaterialConcept ;
+    rdfs:label "изготовлен из материала"@ru .
+
+mus:shownAt a owl:ObjectProperty ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range mus:Exhibition ;
+    rdfs:label "показан на выставке"@ru .
+
+mus:locatedAt a owl:ObjectProperty ;
+    rdfs:domain mus:MuseumEntity ;
+    rdfs:range mus:MuseumLocation ;
+    rdfs:label "находится в месте"@ru .
+
+mus:curatedBy a owl:ObjectProperty ;
+    rdfs:domain mus:Exhibition ;
+    rdfs:range schema:Person ;
+    rdfs:label "курируется лицом"@ru .
+
+mus:organizedBy a owl:ObjectProperty ;
+    rdfs:domain mus:Exhibition ;
+    rdfs:range mus:MuseumOrganization ;
+    rdfs:label "организована организацией"@ru .
+
+mus:hasSubject a owl:ObjectProperty ;
+    rdfs:subPropertyOf dcterms:subject ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range skos:Concept ;
+    rdfs:label "имеет тему"@ru .
+
+# Свойства данных
+mus:inventoryNumber a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range xsd:string ;
+    rdfs:label "инвентарный номер"@ru .
+
+mus:creationYear a owl:DatatypeProperty ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range xsd:gYear ;
+    rdfs:label "год создания"@ru .
+
+mus:acquisitionDate a owl:DatatypeProperty ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range xsd:date ;
+    rdfs:label "дата поступления"@ru .
+
+mus:externalIdentifier a owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:domain mus:MuseumObject ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "внешний идентификатор"@ru .
+
+mus:exhibitionStartDate a owl:DatatypeProperty ;
+    rdfs:domain mus:Exhibition ;
+    rdfs:range xsd:date ;
+    rdfs:label "дата открытия выставки"@ru .
+
+mus:exhibitionEndDate a owl:DatatypeProperty ;
+    rdfs:domain mus:Exhibition ;
+    rdfs:range xsd:date ;
+    rdfs:label "дата закрытия выставки"@ru .

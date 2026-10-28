@@ -1,0 +1,169 @@
+@prefix uni: <https://example.org/university/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+uni:ontology a owl:Ontology ;
+    dcterms:title "Учебная онтология университета"@ru ;
+    dcterms:title "University Teaching Ontology"@en ;
+    dcterms:description "Классы и свойства для описания курсов, программ, людей и кафедр"@ru ;
+    dcterms:creator "Учебная группа"@ru ;
+    dcterms:modified "2026-07-14"^^xsd:date ;
+    owl:versionInfo "1.0" .
+
+uni:Person a rdfs:Class ;
+    rdfs:subClassOf schema:Person , foaf:Person ;
+    rdfs:label "Человек"@ru , "Person"@en ;
+    rdfs:comment "Физическое лицо, участвующее в деятельности университета"@ru ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:Student a rdfs:Class ;
+    rdfs:subClassOf uni:Person ;
+    rdfs:label "Студент"@ru , "Student"@en ;
+    rdfs:comment "Лицо, зачисленное на образовательную программу"@ru ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:Teacher a rdfs:Class ;
+    rdfs:subClassOf uni:Person ;
+    rdfs:label "Преподаватель"@ru , "Teacher"@en ;
+    rdfs:comment "Лицо, ведущее учебный курс или его проведение"@ru ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:Organization a rdfs:Class ;
+    rdfs:subClassOf schema:Organization ;
+    rdfs:label "Организация"@ru , "Organization"@en ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:University a rdfs:Class ;
+    rdfs:subClassOf uni:Organization , schema:CollegeOrUniversity ;
+    rdfs:label "Университет"@ru , "University"@en ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:Department a rdfs:Class ;
+    rdfs:subClassOf uni:Organization ;
+    rdfs:label "Кафедра"@ru , "Department"@en ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:EducationalEntity a rdfs:Class ;
+    rdfs:label "Образовательная сущность"@ru , "Educational entity"@en ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:Course a rdfs:Class ;
+    rdfs:subClassOf uni:EducationalEntity , schema:Course ;
+    rdfs:label "Учебный курс"@ru , "Course"@en ;
+    rdfs:comment "Абстрактное описание учебного содержания"@ru ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:CourseInstance a rdfs:Class ;
+    rdfs:subClassOf uni:EducationalEntity , schema:CourseInstance ;
+    rdfs:label "Проведение курса"@ru , "Course instance"@en ;
+    rdfs:comment "Конкретная реализация курса в учебном периоде"@ru ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:EducationalProgram a rdfs:Class ;
+    rdfs:subClassOf uni:EducationalEntity ;
+    rdfs:label "Образовательная программа"@ru , "Educational program"@en ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:Enrollment a rdfs:Class ;
+    rdfs:label "Зачисление на проведение курса"@ru , "Enrollment"@en ;
+    rdfs:comment "Связующая сущность между студентом и проведением курса"@ru ;
+    rdfs:isDefinedBy uni:ontology .
+
+uni:participatesInLearning a rdf:Property ;
+    rdfs:domain uni:Person ;
+    rdfs:range uni:EducationalEntity ;
+    rdfs:label "участвует в обучении"@ru .
+
+uni:studiesCourse a owl:ObjectProperty ;
+    rdfs:subPropertyOf uni:participatesInLearning ;
+    rdfs:domain uni:Student ;
+    rdfs:range uni:Course ;
+    rdfs:label "изучает курс"@ru .
+
+uni:teachesCourse a owl:ObjectProperty ;
+    rdfs:subPropertyOf uni:participatesInLearning ;
+    rdfs:domain uni:Teacher ;
+    rdfs:range uni:Course ;
+    rdfs:label "ведёт курс"@ru ;
+    owl:inverseOf uni:isTaughtBy .
+
+uni:isTaughtBy a owl:ObjectProperty ;
+    rdfs:domain uni:Course ;
+    rdfs:range uni:Teacher ;
+    rdfs:label "ведётся преподавателем"@ru .
+
+uni:hasCourseInstance a owl:ObjectProperty ;
+    rdfs:subPropertyOf schema:hasCourseInstance ;
+    rdfs:domain uni:Course ;
+    rdfs:range uni:CourseInstance ;
+    rdfs:label "имеет проведение"@ru .
+
+uni:partOfProgram a owl:ObjectProperty ;
+    rdfs:domain uni:Course ;
+    rdfs:range uni:EducationalProgram ;
+    rdfs:label "входит в программу"@ru .
+
+uni:memberOfDepartment a owl:ObjectProperty ;
+    rdfs:domain uni:Person ;
+    rdfs:range uni:Department ;
+    rdfs:label "относится к кафедре"@ru .
+
+uni:providedByDepartment a owl:ObjectProperty ;
+    rdfs:domain uni:Course ;
+    rdfs:range uni:Department ;
+    rdfs:label "предоставляется кафедрой"@ru .
+
+uni:partOfUniversity a owl:ObjectProperty ;
+    rdfs:domain uni:Department ;
+    rdfs:range uni:University ;
+    rdfs:label "входит в университет"@ru .
+
+uni:hasEnrollment a owl:ObjectProperty ;
+    rdfs:domain uni:Student ;
+    rdfs:range uni:Enrollment ;
+    rdfs:label "имеет зачисление"@ru .
+
+uni:forCourseInstance a owl:ObjectProperty ;
+    rdfs:domain uni:Enrollment ;
+    rdfs:range uni:CourseInstance ;
+    rdfs:label "относится к проведению курса"@ru .
+
+uni:fullName a owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:name ;
+    rdfs:domain uni:Person ;
+    rdfs:range rdf:langString ;
+    rdfs:label "полное имя"@ru .
+
+uni:courseCode a owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:courseCode ;
+    rdfs:domain uni:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "код курса"@ru .
+
+uni:credits a owl:DatatypeProperty ;
+    rdfs:domain uni:Course ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "зачётные единицы"@ru .
+
+uni:startDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf schema:startDate ;
+    rdfs:domain uni:CourseInstance ;
+    rdfs:range xsd:date ;
+    rdfs:label "дата начала"@ru .
+
+uni:academicYear a owl:DatatypeProperty ;
+    rdfs:domain uni:CourseInstance ;
+    rdfs:range xsd:gYear ;
+    rdfs:label "учебный год"@ru .
+
+uni:enrollmentStatus a owl:DatatypeProperty ;
+    rdfs:domain uni:Enrollment ;
+    rdfs:range xsd:string ;
+    rdfs:label "статус зачисления"@ru .
+
+uni:Person owl:disjointWith uni:Course .

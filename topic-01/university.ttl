@@ -1,0 +1,107 @@
+@prefix ex: <http://example.org/semtech/variant57/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Классы предметной области
+ex:Course a rdfs:Class ; rdfs:label "Курс"@ru, "Course"@en .
+ex:Module a rdfs:Class ; rdfs:label "Модуль"@ru, "Module"@en .
+ex:Assignment a rdfs:Class ; rdfs:label "Задание"@ru, "Assignment"@en .
+ex:Student a rdfs:Class ; rdfs:label "Студент"@ru, "Student"@en .
+ex:Attempt a rdfs:Class ; rdfs:label "Попытка выполнения задания"@ru, "Assignment attempt"@en .
+ex:Enrollment a rdfs:Class ; rdfs:label "Запись на курс"@ru, "Course enrollment"@en .
+ex:Teacher a rdfs:Class ; rdfs:label "Преподаватель"@ru, "Teacher"@en .
+ex:Organization a rdfs:Class ; rdfs:label "Образовательная организация"@ru .
+ex:Source a rdfs:Class ; rdfs:label "Источник данных"@ru .
+
+# Объектные отношения
+ex:hasModule a rdf:Property ; rdfs:label "содержит модуль"@ru ; rdfs:domain ex:Course ; rdfs:range ex:Module .
+ex:hasAssignment a rdf:Property ; rdfs:label "содержит задание"@ru ; rdfs:domain ex:Module ; rdfs:range ex:Assignment .
+ex:submittedAttempt a rdf:Property ; rdfs:label "отправил попытку"@ru ; rdfs:domain ex:Student ; rdfs:range ex:Attempt .
+ex:attemptForAssignment a rdf:Property ; rdfs:label "попытка по заданию"@ru ; rdfs:domain ex:Attempt ; rdfs:range ex:Assignment .
+ex:enrolledIn a rdf:Property ; rdfs:label "имеет запись на курс"@ru ; rdfs:domain ex:Student ; rdfs:range ex:Enrollment .
+ex:forCourse a rdf:Property ; rdfs:label "запись относится к курсу"@ru ; rdfs:domain ex:Enrollment ; rdfs:range ex:Course .
+ex:taughtBy a rdf:Property ; rdfs:label "ведётся преподавателем"@ru ; rdfs:domain ex:Course ; rdfs:range ex:Teacher .
+ex:providedBy a rdf:Property ; rdfs:label "предоставляется организацией"@ru ; rdfs:domain ex:Course ; rdfs:range ex:Organization .
+ex:hasSource a rdf:Property ; rdfs:label "подтверждается источником"@ru ; rdfs:range ex:Source .
+
+# Атрибуты
+ex:courseCode a rdf:Property ; rdfs:label "код курса"@ru ; rdfs:range xsd:string .
+ex:fullName a rdf:Property ; rdfs:label "полное имя"@ru ; rdfs:range rdf:langString .
+ex:score a rdf:Property ; rdfs:label "результат"@ru ; rdfs:domain ex:Attempt ; rdfs:range xsd:decimal .
+ex:submittedOn a rdf:Property ; rdfs:label "дата отправки"@ru ; rdfs:domain ex:Attempt ; rdfs:range xsd:date .
+ex:attemptNumber a rdf:Property ; rdfs:label "номер попытки"@ru ; rdfs:domain ex:Attempt ; rdfs:range xsd:integer .
+ex:sourceUrl a rdf:Property ; rdfs:label "URL источника"@ru ; rdfs:range xsd:anyURI .
+
+# Экземпляры
+ex:SemTechUniversity a ex:Organization ; rdfs:label "Учебный университет семантических технологий"@ru .
+ex:TeacherPetrova a ex:Teacher ; ex:fullName "Елена Петрова"@ru .
+
+ex:CourseKG a ex:Course ;
+    rdfs:label "Графы знаний"@ru, "Knowledge Graphs"@en ;
+    ex:courseCode "KG-101" ;
+    ex:hasModule ex:ModuleRDF ;
+    ex:taughtBy ex:TeacherPetrova ;
+    ex:providedBy ex:SemTechUniversity .
+
+ex:CoursePython a ex:Course ;
+    rdfs:label "Основы Python"@ru, "Python Basics"@en ;
+    ex:courseCode "PY-100" ;
+    ex:hasModule ex:ModuleFunctions ;
+    ex:taughtBy ex:TeacherPetrova ;
+    ex:providedBy ex:SemTechUniversity .
+
+ex:ModuleRDF a ex:Module ;
+    rdfs:label "RDF и Turtle"@ru ;
+    ex:hasAssignment ex:AssignmentRDF .
+
+ex:ModuleFunctions a ex:Module ;
+    rdfs:label "Функции Python"@ru ;
+    ex:hasAssignment ex:AssignmentFunctions .
+
+ex:AssignmentRDF a ex:Assignment ; rdfs:label "Построить RDF-граф"@ru, "Build an RDF graph"@en .
+ex:AssignmentFunctions a ex:Assignment ; rdfs:label "Реализовать функцию"@ru .
+
+ex:StudentAnna a ex:Student ;
+    ex:fullName "Анна Смирнова"@ru ;
+    ex:enrolledIn ex:EnrollmentAnnaKG ;
+    ex:submittedAttempt ex:AttemptAnnaKG1, ex:AttemptAnnaKG2 .
+
+ex:StudentIvan a ex:Student ;
+    ex:fullName "Иван Орлов"@ru ;
+    ex:enrolledIn ex:EnrollmentIvanKG, ex:EnrollmentIvanPython ;
+    ex:submittedAttempt ex:AttemptIvanKG1, ex:AttemptIvanPython1 .
+
+ex:EnrollmentAnnaKG a ex:Enrollment ; ex:forCourse ex:CourseKG .
+ex:EnrollmentIvanKG a ex:Enrollment ; ex:forCourse ex:CourseKG .
+ex:EnrollmentIvanPython a ex:Enrollment ; ex:forCourse ex:CoursePython .
+
+ex:AttemptAnnaKG1 a ex:Attempt ;
+    ex:attemptForAssignment ex:AssignmentRDF ;
+    ex:score "0.72"^^xsd:decimal ;
+    ex:submittedOn "2026-09-20"^^xsd:date ;
+    ex:attemptNumber "1"^^xsd:integer .
+
+ex:AttemptAnnaKG2 a ex:Attempt ;
+    ex:attemptForAssignment ex:AssignmentRDF ;
+    ex:score "0.91"^^xsd:decimal ;
+    ex:submittedOn "2026-09-24"^^xsd:date ;
+    ex:attemptNumber "2"^^xsd:integer ;
+    ex:hasSource ex:LMSLog20260924 .
+
+ex:AttemptIvanKG1 a ex:Attempt ;
+    ex:attemptForAssignment ex:AssignmentRDF ;
+    ex:score "0.84"^^xsd:decimal ;
+    ex:submittedOn "2026-09-23"^^xsd:date ;
+    ex:attemptNumber "1"^^xsd:integer .
+
+ex:AttemptIvanPython1 a ex:Attempt ;
+    ex:attemptForAssignment ex:AssignmentFunctions ;
+    ex:score "0.88"^^xsd:decimal ;
+    ex:submittedOn "2026-09-22"^^xsd:date ;
+    ex:attemptNumber "1"^^xsd:integer .
+
+# Источник подтверждает значимый факт отправки второй попытки Анны.
+ex:LMSLog20260924 a ex:Source ;
+    rdfs:label "Журнал событий LMS за 24 сентября 2026 года"@ru ;
+    ex:sourceUrl "https://lms.example.org/audit/2026-09-24/anna-kg-2"^^xsd:anyURI .

@@ -1,0 +1,4 @@
+head,relation,truth,prediction,rank,truth_in_raw_wikidata,prediction_in_raw_wikidata,head_train_degree,common_train_neighbors_with_truth,head_wikidata,truth_wikidata,prediction_wikidata
+Q145,P47,Q826,Q142,169,True,False,7,0,https://www.wikidata.org/wiki/Q145,https://www.wikidata.org/wiki/Q826,https://www.wikidata.org/wiki/Q142
+Q142,P47,Q730,Q233,139,True,False,13,1,https://www.wikidata.org/wiki/Q142,https://www.wikidata.org/wiki/Q730,https://www.wikidata.org/wiki/Q233
+Q1045,P47,Q114,Q986,73,True,False,2,0,https://www.wikidata.org/wiki/Q1045,https://www.wikidata.org/wiki/Q114,https://www.wikidata.org/wiki/Q986

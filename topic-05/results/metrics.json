@@ -1,0 +1,138 @@
+{
+  "endpoint": "https://query.wikidata.org/sparql",
+  "retrieved_at_utc": "2026-10-28T18:35:23.660095+00:00",
+  "border_query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT ?country ?neighbor ?statement ?borderItem ?criterion ?nature WHERE {\n  ?country wdt:P31 wd:Q3624078 ; wdt:P47 ?neighbor ; p:P47 ?statement .\n  ?neighbor wdt:P31 wd:Q3624078 .\n  ?statement ps:P47 ?neighbor .\n  FILTER(?country != ?neighbor)\n  OPTIONAL { ?statement pq:P805 ?borderItem }\n  OPTIONAL { ?statement pq:P1013 ?criterion }\n  OPTIONAL { ?statement pq:P5102 ?nature }\n}",
+  "attributes_query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?country ?relation ?tail WHERE {\n  ?country wdt:P31 wd:Q3624078 .\n  VALUES ?relation { wdt:P36 wdt:P37 wdt:P38 wdt:P30 }\n  ?country ?relation ?tail .\n}",
+  "border_types_query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT ?country ?neighbor ?borderItem ?kind WHERE {\n  ?country wdt:P31 wd:Q3624078 ; wdt:P47 ?neighbor ; p:P47 ?statement .\n  ?neighbor wdt:P31 wd:Q3624078 .\n  ?statement ps:P47 ?neighbor ; pq:P805 ?borderItem .\n  OPTIONAL { ?borderItem wdt:P31 ?kind }\n}",
+  "border_features_query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX p: <http://www.wikidata.org/prop/>\nPREFIX ps: <http://www.wikidata.org/prop/statement/>\nPREFIX pq: <http://www.wikidata.org/prop/qualifier/>\nSELECT ?country ?neighbor ?borderItem ?feature ?featureProperty WHERE {\n  ?country wdt:P31 wd:Q3624078 ; wdt:P47 ?neighbor ; p:P47 ?statement .\n  ?neighbor wdt:P31 wd:Q3624078 .\n  ?statement ps:P47 ?neighbor ; pq:P805 ?borderItem .\n  VALUES ?featureProperty { wdt:P706 wdt:P206 }\n  ?borderItem ?featureProperty ?feature .\n}",
+  "labels_query": "PREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nPREFIX bd: <http://www.bigdata.com/rdf#>\nSELECT ?item ?itemLabel WHERE {\n  VALUES ?item { wd:Q10286070 wd:Q10286074 wd:Q10286078 wd:Q1057263 wd:Q1060616 wd:Q1132137 wd:Q1133272 wd:Q11701310 wd:Q118574 wd:Q119515 wd:Q12243719 wd:Q12243721 wd:Q1239 wd:Q1247 wd:Q127031 wd:Q13390223 wd:Q1413732 wd:Q14352 wd:Q1480109 wd:Q14905346 wd:Q15214996 wd:Q15710 wd:Q1572612 wd:Q15921319 wd:Q15991213 wd:Q16024884 wd:Q16025014 wd:Q16025208 wd:Q16025252 wd:Q160928 wd:Q16802111 wd:Q168329 wd:Q1693 wd:Q17003473 wd:Q17351357 wd:Q17351690 wd:Q17351692 wd:Q17351704 wd:Q17351707 wd:Q17351709 wd:Q17351710 wd:Q17351714 wd:Q17351715 wd:Q17351725 wd:Q17351726 wd:Q17351727 wd:Q17351728 wd:Q17351729 wd:Q17351730 wd:Q17351731 wd:Q17351739 wd:Q17351743 wd:Q17351744 wd:Q17351748 wd:Q17351753 wd:Q17351760 wd:Q17351765 wd:Q17351772 wd:Q17351774 wd:Q17351776 wd:Q17351777 wd:Q17351780 wd:Q17351781 wd:Q17351782 wd:Q17351783 wd:Q17351784 wd:Q17351786 wd:Q17351791 wd:Q17351792 wd:Q17351793 wd:Q17351794 wd:Q17351795 wd:Q17351800 wd:Q17351801 wd:Q17351807 wd:Q17351808 wd:Q17351809 wd:Q17351810 wd:Q17351811 wd:Q17351815 wd:Q17351818 wd:Q17351821 wd:Q17351825 wd:Q17351827 wd:Q17351829 wd:Q17351833 wd:Q17351838 wd:Q17351841 wd:Q177567 wd:Q184189 wd:Q189262 wd:Q189942 wd:Q1991225 wd:Q1991264 wd:Q1991275 wd:Q1991288 wd:Q1991311 wd:Q1991324 wd:Q1991486 wd:Q1991697 wd:Q1991810 wd:Q1991943 wd:Q1991951 wd:Q1991956 wd:Q1991986 wd:Q1991994 wd:Q1992001 wd:Q1992781 wd:Q1992790 wd:Q1993022 wd:Q1993066 wd:Q1993076 wd:Q1993093 wd:Q1993469 wd:Q1993481 wd:Q1993494 wd:Q1993836 wd:Q1993845 wd:Q1993859 wd:Q1994949 wd:Q1996259 wd:Q1996372 wd:Q2009420 wd:Q2052849 wd:Q207468 wd:Q2109394 wd:Q21685994 wd:Q22789643 wd:Q2379519 wd:Q2399139 wd:Q2412103 wd:Q2422197 wd:Q2452547 wd:Q2453047 wd:Q2453169 wd:Q2453561 wd:Q2453834 wd:Q2456673 wd:Q2457112 wd:Q2457562 wd:Q2467764 wd:Q2499730 wd:Q25383190 wd:Q2546051 wd:Q25596 wd:Q2573418 wd:Q2576553 wd:Q2578683 wd:Q2623774 wd:Q2629888 wd:Q2629898 wd:Q2630440 wd:Q2630766 wd:Q2631181 wd:Q2631814 wd:Q2634555 wd:Q2635466 wd:Q2637319 wd:Q2658266 wd:Q2661853 wd:Q2682071 wd:Q26833470 wd:Q26833474 wd:Q26833475 wd:Q2699571 wd:Q2708432 wd:Q2717530 wd:Q2720214 wd:Q2742537 wd:Q2742785 wd:Q2747810 wd:Q2748217 wd:Q2748867 wd:Q2749121 wd:Q2749127 wd:Q2749165 wd:Q2749188 wd:Q2749284 wd:Q2778786 wd:Q2877502 wd:Q2913944 wd:Q29623480 wd:Q30315007 wd:Q3081870 wd:Q3088642 wd:Q3088649 wd:Q3088651 wd:Q3088652 wd:Q3088659 wd:Q3088661 wd:Q3088662 wd:Q3088665 wd:Q3088667 wd:Q3088668 wd:Q3088669 wd:Q3088673 wd:Q3088674 wd:Q3088676 wd:Q3088677 wd:Q3088683 wd:Q3088684 wd:Q3088685 wd:Q3088686 wd:Q3088687 wd:Q3088692 wd:Q3088693 wd:Q3088696 wd:Q3088698 wd:Q3088699 wd:Q3088701 wd:Q3088702 wd:Q3088704 wd:Q3088706 wd:Q3088708 wd:Q3088710 wd:Q3088712 wd:Q3088713 wd:Q3088714 wd:Q3088715 wd:Q3088719 wd:Q3088720 wd:Q3088723 wd:Q3088728 wd:Q3088731 wd:Q3088732 wd:Q3088734 wd:Q3088737 wd:Q3088742 wd:Q3088744 wd:Q3088747 wd:Q3088748 wd:Q3088749 wd:Q3088768 wd:Q3088770 wd:Q3088775 wd:Q3088777 wd:Q3088782 wd:Q3088785 wd:Q3088786 wd:Q3088787 wd:Q3088788 wd:Q3088789 wd:Q3088792 wd:Q3088800 wd:Q3088801 wd:Q3088803 wd:Q3088804 wd:Q3088806 wd:Q3088807 wd:Q3088817 wd:Q3088818 wd:Q3088822 wd:Q3088824 wd:Q3088825 wd:Q3088827 wd:Q3088830 wd:Q3088831 wd:Q3088835 wd:Q3088839 wd:Q3088841 wd:Q3088842 wd:Q3088843 wd:Q3088844 wd:Q3088853 wd:Q3088855 wd:Q3088856 wd:Q3088857 wd:Q3088858 wd:Q3088859 wd:Q3088864 wd:Q3088866 wd:Q3088873 wd:Q3088879 wd:Q3088884 wd:Q3088885 wd:Q3088888 wd:Q3088889 wd:Q3088890 wd:Q3088891 wd:Q3088892 wd:Q3088898 wd:Q3088899 wd:Q3088907 wd:Q3088912 wd:Q3088913 wd:Q3088916 wd:Q3088920 wd:Q3088921 wd:Q3088922 wd:Q3088923 wd:Q3088927 wd:Q3088929 wd:Q3088930 wd:Q3088932 wd:Q3088937 wd:Q3088939 wd:Q3088942 wd:Q3088943 wd:Q3088945 wd:Q3088946 wd:Q3088947 wd:Q3088952 wd:Q3088956 wd:Q3088957 wd:Q3088959 wd:Q3088964 wd:Q3088969 wd:Q3088970 wd:Q3088972 wd:Q3088973 wd:Q3088974 wd:Q3088975 wd:Q3088977 wd:Q3088978 wd:Q3088979 wd:Q3088981 wd:Q3088985 wd:Q3088988 wd:Q3088995 wd:Q3088996 wd:Q3088998 wd:Q3089000 wd:Q3089001 wd:Q3089002 wd:Q3089005 wd:Q3089007 wd:Q3089009 wd:Q3089012 wd:Q3089013 wd:Q3089014 wd:Q3089016 wd:Q3089018 wd:Q3089020 wd:Q3089021 wd:Q3089023 wd:Q3089024 wd:Q3089025 wd:Q3089027 wd:Q3089029 wd:Q3089034 wd:Q3089035 wd:Q3089036 wd:Q3089038 wd:Q3089040 wd:Q3089041 wd:Q3089042 wd:Q3089050 wd:Q3089051 wd:Q3089058 wd:Q3089062 wd:Q3089067 wd:Q3089071 wd:Q3089075 wd:Q3089076 wd:Q3089077 wd:Q3089079 wd:Q3089081 wd:Q3089082 wd:Q3089085 wd:Q3089089 wd:Q3089091 wd:Q3089096 wd:Q3089099 wd:Q3089100 wd:Q3089101 wd:Q3089102 wd:Q3089104 wd:Q3089106 wd:Q3089108 wd:Q3089109 wd:Q3089110 wd:Q3089112 wd:Q3089113 wd:Q3089114 wd:Q3089116 wd:Q3089118 wd:Q3089119 wd:Q3089120 wd:Q3089121 wd:Q3089128 wd:Q3089147 wd:Q3089149 wd:Q3089150 wd:Q3089151 wd:Q3089152 wd:Q3089173 wd:Q3089174 wd:Q3089176 wd:Q3089177 wd:Q3089185 wd:Q3089187 wd:Q3089188 wd:Q3089199 wd:Q3089204 wd:Q3089207 wd:Q321871 wd:Q331990 wd:Q36755 wd:Q37040 wd:Q3705943 wd:Q376744 wd:Q384982 wd:Q38882 wd:Q390088 wd:Q3902457 wd:Q41573 wd:Q4398224 wd:Q4825284 wd:Q4918 wd:Q495735 wd:Q5066892 wd:Q542085 wd:Q544772 wd:Q55223347 wd:Q558660 wd:Q572463 wd:Q576324 wd:Q581065 wd:Q584 wd:Q6026342 wd:Q603662 wd:Q631348 wd:Q640742 wd:Q641617 wd:Q643547 wd:Q650979 wd:Q654702 wd:Q664063 wd:Q66992821 wd:Q670200 wd:Q67087030 wd:Q6742083 wd:Q681389 wd:Q682804 wd:Q730240 wd:Q737190 wd:Q740278 wd:Q740393 wd:Q74091 wd:Q765017 wd:Q771362 wd:Q782109 wd:Q7886162 wd:Q7886197 wd:Q796684 wd:Q816253 wd:Q827735 wd:Q83210 wd:Q882518 wd:Q927228 wd:Q935227 wd:Q94635 wd:Q966245 wd:Q97 wd:Q975685 wd:Q98 }\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"ru,en\". }\n}",
+  "label_count": 456,
+  "variant": 57,
+  "mapped_variant": 27,
+  "seed": 2083,
+  "dimension": 12,
+  "node2vec_p": 1.0,
+  "node2vec_q": 1.0,
+  "margin": 1.0,
+  "countries": 196,
+  "border_pairs": 433,
+  "raw_border_statements": 806,
+  "kge_resource_triples": 1875,
+  "typed_border_triples": 1050,
+  "shared_attribute_rows": 3030,
+  "border_type_counts": {
+    "land": 199,
+    "land|water": 121,
+    "water": 84,
+    "unknown": 29
+  },
+  "border_pairs_with_object": 406,
+  "border_pairs_with_feature": 21,
+  "numeric_literal_triples": 196,
+  "rdf_triples": 10943,
+  "kge_entities": 757,
+  "relations": [
+    "P47",
+    "P36",
+    "P37",
+    "P38",
+    "P30"
+  ],
+  "split": {
+    "train": 1541,
+    "validation": 167,
+    "test": 167
+  },
+  "validation_relation_counts": {
+    "P47": 86,
+    "P37": 38,
+    "P38": 22,
+    "P30": 20,
+    "P36": 1
+  },
+  "test_relation_counts": {
+    "P47": 86,
+    "P37": 38,
+    "P38": 22,
+    "P30": 20,
+    "P36": 1
+  },
+  "positive_triple": [
+    "Q183",
+    "P47",
+    "Q142"
+  ],
+  "negative_triple": [
+    "Q183",
+    "P47",
+    "Q408"
+  ],
+  "positive_distance": 3.140250882662222,
+  "negative_distance": 4.662618076985331,
+  "margin_loss": 0.0,
+  "validation": {
+    "TransE": {
+      "MRR": 0.3860088422859183,
+      "Hits@1": 0.281437125748503,
+      "Hits@3": 0.41317365269461076,
+      "Hits@10": 0.6407185628742516,
+      "MR": 17.353293413173652
+    },
+    "DistMult": {
+      "MRR": 0.2974242364565538,
+      "Hits@1": 0.19760479041916168,
+      "Hits@3": 0.32934131736526945,
+      "Hits@10": 0.4550898203592814,
+      "MR": 32.66467065868263
+    }
+  },
+  "validation_P47": {
+    "TransE": {
+      "MRR": 0.2355255325397786,
+      "Hits@1": 0.12790697674418605,
+      "Hits@3": 0.2441860465116279,
+      "Hits@10": 0.5116279069767442,
+      "MR": 21.36046511627907
+    },
+    "DistMult": {
+      "MRR": 0.14221878165711435,
+      "Hits@1": 0.046511627906976744,
+      "Hits@3": 0.1511627906976744,
+      "Hits@10": 0.26744186046511625,
+      "MR": 34.7093023255814
+    }
+  },
+  "test": {
+    "TransE": {
+      "MRR": 0.3263404205364023,
+      "Hits@1": 0.18562874251497005,
+      "Hits@3": 0.39520958083832336,
+      "Hits@10": 0.592814371257485,
+      "MR": 20.44311377245509
+    },
+    "DistMult": {
+      "MRR": 0.3005824857194661,
+      "Hits@1": 0.20359281437125748,
+      "Hits@3": 0.31736526946107785,
+      "Hits@10": 0.46107784431137727,
+      "MR": 28.982035928143713
+    }
+  },
+  "test_P47": {
+    "TransE": {
+      "MRR": 0.20368633729051852,
+      "Hits@1": 0.08139534883720931,
+      "Hits@3": 0.23255813953488372,
+      "Hits@10": 0.4186046511627907,
+      "MR": 23.197674418604652
+    },
+    "DistMult": {
+      "MRR": 0.20831885532959846,
+      "Hits@1": 0.10465116279069768,
+      "Hits@3": 0.23255813953488372,
+      "Hits@10": 0.38372093023255816,
+      "MR": 29.1046511627907
+    }
+  },
+  "selected_on_validation_P47": "TransE"
+}

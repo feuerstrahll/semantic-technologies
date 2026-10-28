@@ -1,0 +1,33 @@
+
+@prefix uni: <https://example.org/university/> .
+@prefix sh:  <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uni:CourseShape a sh:NodeShape ;
+    sh:targetClass uni:Course ;
+
+    sh:property [
+        sh:path uni:courseCode ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[A-Z]{2}-[0-9]{3}$" ;
+        sh:message "У курса должен быть ровно один код вида ST-201."@ru
+    ] ;
+
+    sh:property [
+        sh:path uni:credits ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0 ;
+        sh:message "Зачётные единицы должны быть одним неотрицательным числом xsd:decimal."@ru
+    ] ;
+
+    sh:property [
+        sh:path uni:partOfProgram ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class uni:EducationalProgram ;
+        sh:message "Курс должен ссылаться на образовательную программу через IRI."@ru
+    ] .

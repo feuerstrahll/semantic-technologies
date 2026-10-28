@@ -1,0 +1,58 @@
+@prefix mus: <https://example.org/museum/ontology/> .
+@prefix id: <https://example.org/museum/id/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+id:DemoMuseum a mus:MuseumOrganization ;
+    dcterms:title "Учебный музей русского авангарда"@ru .
+
+id:MainCollection a mus:Collection ;
+    dcterms:title "Основная коллекция русского авангарда"@ru ;
+    mus:hasMember id:BlackSquare1930 .
+
+id:Malevich a mus:Creator ;
+    dcterms:title "Казимир Малевич"@ru .
+
+id:OilPaint a mus:MaterialConcept ;
+    skos:prefLabel "масляная краска"@ru .
+
+id:AvantGarde a skos:Concept ;
+    skos:prefLabel "русский авангард"@ru .
+
+id:WinterPalaceHall a mus:MuseumLocation ;
+    dcterms:title "Выставочный зал № 1"@ru .
+
+id:RussianAvantGardeExhibition a mus:Exhibition ;
+    dcterms:title "Русский авангард: формы и идеи"@ru ;
+    mus:organizedBy id:DemoMuseum ;
+    mus:locatedAt id:WinterPalaceHall ;
+    mus:exhibitionStartDate "2026-09-01"^^xsd:date ;
+    mus:exhibitionEndDate "2026-12-20"^^xsd:date .
+
+# Корректный ресурс. Тип MuseumObject будет также выведен из Artwork.
+id:BlackSquare1930 a mus:Artwork, mus:MuseumObject ;
+    dcterms:title "Чёрный квадрат (1930)"@ru ;
+    dcterms:description "Учебная запись музейного каталога для проверки модели."@ru ;
+    mus:inventoryNumber "Ж-0001" ;
+    mus:creationYear "1930"^^xsd:gYear ;
+    mus:acquisitionDate "2020-05-15"^^xsd:date ;
+    mus:externalIdentifier "https://www.wikidata.org/entity/Q27970882"^^xsd:anyURI ;
+    schema:sameAs <https://www.wikidata.org/entity/Q27970882> ;
+    dcterms:subject <http://dbpedia.org/resource/Russian_avant-garde> ;
+    mus:createdBy id:Malevich ;
+    mus:madeOf id:OilPaint ;
+    mus:memberOfCollection id:MainCollection ;
+    mus:shownAt id:RussianAvantGardeExhibition ;
+    mus:locatedAt id:WinterPalaceHall ;
+    mus:hasSubject id:AvantGarde .
+
+# Намеренно ошибочный ресурс для SHACL: нет названия; неверны формат номера,
+# вид узла/класс автора и класс материала.
+id:BrokenObject a mus:MuseumObject ;
+    mus:inventoryNumber "bad 17" ;
+    mus:createdBy "неизвестный автор" ;
+    mus:madeOf id:MainCollection .

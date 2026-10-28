@@ -1,0 +1,7 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+SELECT ?country ?relation ?tail WHERE {
+  ?country wdt:P31 wd:Q3624078 .
+  VALUES ?relation { wdt:P36 wdt:P37 wdt:P38 wdt:P30 }
+  ?country ?relation ?tail .
+}

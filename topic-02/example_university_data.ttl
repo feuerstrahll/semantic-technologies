@@ -1,0 +1,78 @@
+@prefix uni: <https://example.org/university/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+uni:ExampleUniversity a uni:University ;
+    rdfs:label "Примерный университет"@ru , "Example University"@en ;
+    schema:url <https://www.example.edu/> .
+
+uni:AIDepartment a uni:Department ;
+    rdfs:label "Кафедра искусственного интеллекта"@ru ;
+    uni:partOfUniversity uni:ExampleUniversity .
+
+uni:DataDepartment a uni:Department ;
+    rdfs:label "Кафедра инженерии данных"@ru ;
+    uni:partOfUniversity uni:ExampleUniversity .
+
+uni:AppliedInformatics a uni:EducationalProgram ;
+    rdfs:label "Прикладная информатика"@ru .
+
+uni:DataEngineering a uni:EducationalProgram ;
+    rdfs:label "Инженерия данных"@ru .
+
+uni:SemTech a uni:Course ;
+    rdfs:label "Семантические технологии"@ru , "Semantic Technologies"@en ;
+    uni:courseCode "ST-201" ;
+    uni:credits "3"^^xsd:decimal ;
+    uni:partOfProgram uni:AppliedInformatics ;
+    uni:providedByDepartment uni:AIDepartment ;
+    dcterms:subject <http://dbpedia.org/resource/Semantic_Web> .
+
+uni:KnowledgeGraphs a uni:Course ;
+    rdfs:label "Графы знаний"@ru , "Knowledge Graphs"@en ;
+    uni:courseCode "KG-301" ;
+    uni:credits "4"^^xsd:decimal ;
+    uni:partOfProgram uni:DataEngineering ;
+    uni:providedByDepartment uni:DataDepartment ;
+    dcterms:subject <http://dbpedia.org/resource/Knowledge_graph> .
+
+uni:SemTech2026Autumn a uni:CourseInstance ;
+    rdfs:label "Семантические технологии, осень 2026"@ru ;
+    uni:startDate "2026-09-01"^^xsd:date ;
+    uni:academicYear "2026"^^xsd:gYear .
+
+uni:KnowledgeGraphs2027Spring a uni:CourseInstance ;
+    rdfs:label "Графы знаний, весна 2027"@ru ;
+    uni:startDate "2027-02-08"^^xsd:date ;
+    uni:academicYear "2027"^^xsd:gYear .
+
+uni:SemTech uni:hasCourseInstance uni:SemTech2026Autumn .
+uni:KnowledgeGraphs uni:hasCourseInstance uni:KnowledgeGraphs2027Spring .
+
+uni:Anna a uni:Student ;
+    uni:fullName "Анна Смирнова"@ru ;
+    uni:studiesCourse uni:SemTech ;
+    uni:memberOfDepartment uni:AIDepartment .
+
+uni:Ivan a uni:Student ;
+    uni:fullName "Иван Орлов"@ru ;
+    uni:studiesCourse uni:SemTech , uni:KnowledgeGraphs ;
+    uni:memberOfDepartment uni:DataDepartment .
+
+uni:Petrova a uni:Teacher ;
+    uni:fullName "Елена Петрова"@ru ;
+    uni:teachesCourse uni:SemTech ;
+    uni:memberOfDepartment uni:AIDepartment .
+
+uni:Sidorov a uni:Teacher ;
+    uni:fullName "Максим Сидоров"@ru ;
+    uni:teachesCourse uni:KnowledgeGraphs ;
+    uni:memberOfDepartment uni:DataDepartment .
+
+uni:AnnaSemTechEnrollment a uni:Enrollment ;
+    uni:forCourseInstance uni:SemTech2026Autumn ;
+    uni:enrollmentStatus "active" .
+
+uni:Anna uni:hasEnrollment uni:AnnaSemTechEnrollment .
